@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | COM1006 Assignment</title>
+    <link rel="stylesheet" href="../common.css?v=gradient-titles-1">
+    <link rel="stylesheet" href="./home.css?v=welcome-effects-scale-22">
+</head>
+<body>
+    <div class="night-world"></div>
+    <div class="night-stars"></div>
+    <div class="night-moon"></div>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <!-- Day / Night -->
+                <li class="theme-switch-item">
+                    <button class="day-night-toggle" id="dayNightToggle" aria-label="Toggle day and night">
+                        <span class="sun-icon">☀</span>
+                        <span class="moon-icon">☾</span>
+                    </button>
+                </li>
+                <li>
+                    <a href="../home/index.html" class="glass-nav-item">
+                        Home
+                        <img class="nav-char-icon" src="../images/char-home.png" alt="pochacco">
+                    </a>
+                </li>
+                <li>
+                    <a href="../about/about.html" class="glass-nav-item">
+                        About
+                        <img class="nav-char-icon" src="../images/char-about.png" alt="melody">
+                    </a>
+                </li>
+                <li>
+                    <a href="../internship/internship.html" class="glass-nav-item">
+                        Internship
+                        <img class="nav-char-icon" src="../images/char-internship.png" alt="pompompurin">
+                    </a>
+                </li>
+                <li>
+                    <a href="../projects/projects.html" class="glass-nav-item">
+                        Projects
+                        <img class="nav-char-icon" src="../images/char-projects.png" alt="cinnamoroll">
+                    </a>
+                </li>
+                <li>
+                    <a href="../skills/skills.html" class="glass-nav-item">
+                        Skills
+                        <img class="nav-char-icon" src="../images/char-skills.png" alt="kuromi">
+                    </a>
+                </li>
+            </ul>
+            <div class="menu-btn" id="menuBtn">☰</div>
+            <p class="welcome-hint">Click characters to jump to the corresponding interface</p>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="petals-container"></div>
+         <div class="cursor-glow"></div>
+        <div class="floating-ribbons" aria-hidden="true"></div>
+        <div class="floating-bubbles" aria-hidden="true"></div>
+        <div class="sparkles" aria-hidden="true"></div>
+
+        <!-- Floating character PNG layer with hover lift effect -->
+        <div class="character-float-wrap">
+            <a href="../about/about.html" class="char-float" data-name="about">
+                <img src="../images/char-about-rug.png" alt="about">
+            </a>
+            <a href="../internship/internship.html" class="char-float" data-name="internship">
+                <img src="../images/char-internship-rug.png" alt="internship">
+            </a>
+            <a href="../projects/projects.html" class="char-float" data-name="projects">
+                <img src="../images/char-projects-rug.png" alt="projects">
+            </a>
+            <a href="../skills/skills.html" class="char-float" data-name="skills">
+                <img src="../images/char-skills-rug.png" alt="skills">
+            </a>
+            <a href="./index.html" class="char-float" data-name="home">
+                <img src="../images/char-home-rug.png" alt="home">
+            </a>
+        </div>
+
+        <div class="hero-content">
+            <div class="animate-item item-1 title-main"><span class="title-heading">Welcome My</span> <span class="title-gradient-accent">Website</span></div>
+            <div class="animate-item item-2 divider-line"></div>
+            <div class="animate-item item-3">
+                <p class="intro-text">I'm <span class="highlight">REN Silu</span></p>
+            </div>
+            <div class="animate-item item-4">
+                <a href="../about/about.html" class="btn-explore">Explore More</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Contact me: rensilo33@outlook.com</p>
+    </footer>
+
+    <script src="./home.js"></script>
+</body>
+</html>
