@@ -1,0 +1,892 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+}
+
+body {
+    line-height: 1.4;
+    color: #443333;
+}
+
+/* Navbar */
+#navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #4b2c36;
+}
+
+.nav-links {
+    display: flex;
+    gap:14px;
+    list-style: none;
+}
+
+.glass-nav-item{
+    display: inline-block;
+    padding:7px 16px;
+    border-radius:999px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border:1px solid rgba(255,255,255,0.25);
+    color:#4b2c36;
+    text-decoration: none;
+    font-weight:500;
+    transition: all 0.25s ease;
+}
+
+.glass-nav-item:hover{
+    transform: scale(1.12);
+    background:rgba(255,255,255,0.3);
+    color:#b85c78;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #4b2c36;
+}
+
+
+/* Hero */
+.internship-hero{
+    width: 100%;
+    min-height: 100vh;
+    background: url("../images/home-bg.png") center top / 100% auto repeat-y;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 4vw 30px;
+}
+
+.internship-overlay{
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 245, 248, 0.35);
+    z-index: 1;
+}
+
+.internship-container{
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.page-title{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #332228;
+    margin-bottom: 24px;
+    transform: translateY(-80px);
+}
+
+/* 两栏外层容器：左右并排，两个实习卡片 */
+.two-col-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:30px;
+    align-items: start;
+}
+
+/* 单张实习卡片：文字框在上，图片框在下，垂直排列 */
+.intern-card{
+    display:flex;
+    flex-direction: column;
+    gap:16px;
+}
+
+/* 左侧文字玻璃框，提高透明度，文字清晰 */
+.text-box{
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,0.75);
+    border-radius: 14px;
+    padding:14px;
+    width:100%;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+.text-box:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(184, 92, 119, 0.11);
+}
+.text-box h2{
+    font-size:1rem;
+    color:#462834;
+    margin-bottom:8px;
+}
+.text-box p{
+    font-size:0.82rem;
+    color:#222;
+    line-height:1.45;
+    margin-bottom:4px;
+}
+.text-box ul{
+    padding-left: 20px;
+    margin-top:8px;
+}
+.text-box ul li{
+    font-size:0.82rem;
+    color:#222;
+    line-height:1.45;
+    margin-bottom:4px;
+}
+
+/* 缩小图片框 */
+.image-box{
+    position:relative;
+    background: rgba(255,255,255,0.28);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.45);
+    border-radius:14px;
+    padding:5px;
+    overflow:hidden;
+    aspect-ratio: 3 / 3.2;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+.image-box:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(184, 92, 119, 0.11);
+}
+.slider-track{
+    width:200%;
+    height:100%;
+    display:flex;
+    transition: transform 0.35s ease;
+}
+.slider-track img{
+    width:50%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+    border-radius:10px;
+}
+
+/* 轮播左右按钮样式 */
+.slider-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    border:none;
+    background:rgba(255,255,255,0.7);
+    color:#333;
+    font-size:18px;
+    cursor:pointer;
+    z-index:10;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.slider-btn.prev{
+    left:8px;
+}
+.slider-btn.next{
+    right:8px;
+}
+.slider-btn:hover{
+    background:rgba(255,255,255,0.95);
+}
+
+/* 底部按钮 */
+.page-bottom-btn-group{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap:900px;
+    margin-top:24px;
+    justify-content: center;
+}
+.btn-primary{
+    display: inline-block;
+    padding:14px 32px;
+    border-radius:999px;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.6);
+    color: #462834;
+    text-decoration: none;
+    font-weight: 600;
+    font-size:0.85rem;
+    transition: all 0.28s ease;
+}
+.btn-primary:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(184, 92, 119, 0.12);
+}
+.btn-secondary{
+    display: inline-block;
+    padding:14px 32px;
+    border-radius:999px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.45);
+    color: #462834;
+    text-decoration: none;
+    font-weight: 600;
+    font-size:0.85rem;
+    transition: all 0.28s ease;
+}
+.btn-secondary:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(184, 92, 119, 0.12);
+}
+
+/* 入场动画 */
+.animate-item{
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+    animation: fadeUp 0.6s ease forwards;
+}
+.item-1{animation-delay: 0s;}
+.item-2{animation-delay: 0.12s;}
+.item-3{animation-delay: 0.24s;}
+@keyframes fadeUp {
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* 移动端：屏幕变窄自动切换成上下堆叠 */
+@media(max-width:768px){
+    html,body{overflow:hidden;}
+    .two-col-wrapper{
+        grid-template-columns: 1fr;
+        gap:20px;
+    }
+    .nav-links{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.10);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding:14px;
+        display: none;
+    }
+    .nav-links.active{
+        display: flex;
+    }
+    .menu-btn{
+        display: block;
+    }
+}
+
+/* Use one full-page background canvas instead of repeating the artwork in the hero. */
+body{
+    background:url("../images/home-bg.png") center center / cover fixed no-repeat;
+}
+
+.internship-hero{
+    background:transparent;
+}
+
+/* One-screen internship layout: retain every text card, carousel and page link without vertical scrolling. */
+html:has(.internship-hero),
+body:has(.internship-hero){
+    width:100%;
+    height:100%;
+    min-height:0;
+    overflow:hidden;
+}
+
+body .internship-hero{
+    width:100%;
+    height:100vh;
+    height:100dvh;
+    min-height:0;
+    overflow:hidden;
+    padding:clamp(84px, 9vh, 112px) clamp(20px, 4vw, 64px) 18px;
+}
+
+body .internship-container{
+    display:flex;
+    flex:1 1 auto;
+    flex-direction:column;
+    width:min(100%, 1200px);
+    max-width:1200px;
+    min-height:0;
+    margin:0 auto;
+}
+
+body .internship-container .page-title{
+    flex:0 0 auto;
+    margin:0 auto clamp(10px, 1.5vh, 16px);
+    transform:none;
+    font-size:clamp(2.5rem, 5.5svh, 4rem);
+    line-height:1.1;
+    color:#563340;
+}
+
+body .internship-container .two-col-wrapper{
+    flex:1 1 auto;
+    min-height:0;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:clamp(14px, 1.8vw, 26px);
+    align-items:center
+}
+
+body .internship-container .intern-card{
+    min-width:0;
+    min-height:0;
+    height:auto;
+    gap:clamp(10px, 1.5vh, 16px);
+}
+
+body .internship-container .text-box{
+    min-height:0;
+    padding:clamp(12px, 1.4vw, 20px);
+    border-radius:18px;
+    background:rgba(255,255,255,.72);
+    border-color:rgba(255,255,255,.82);
+    box-shadow:0 12px 32px rgba(92,48,64,.1);
+}
+
+body .internship-container .text-box h2{
+    margin-bottom:8px;
+    font-size:clamp(.9rem, 1.1vw, 1.05rem);
+    line-height:1.35;
+}
+
+body .internship-container .text-box p,
+body .internship-container .text-box ul li{
+    font-size:clamp(.76rem, .95vw, .9rem);
+    line-height:1.45;
+}
+
+body .internship-container .text-box ul{margin-top:7px;}
+body .internship-container .text-box ul li{margin-bottom:4px;}
+
+body .internship-container .image-col{
+    flex:0 0 auto;
+    width:100%;
+    aspect-ratio:4 / 3;
+    min-height:0;
+}
+
+body .internship-container .image-box{
+    width:100%;
+    height:100%;
+    min-height:0;
+    aspect-ratio:auto;
+    padding:6px;
+    border-radius:18px;
+    background:rgba(255,255,255,.4);
+    border-color:rgba(255,255,255,.62);
+    box-shadow:0 12px 32px rgba(92,48,64,.1);
+}
+
+body .internship-container .slider-track img{
+    border-radius:13px;
+    object-fit:contain;
+}
+
+.internship-hero > .page-bottom-btn-group{
+    flex:0 0 auto;
+    width:min(100%, 1200px);
+    margin:clamp(10px, 1.6vh, 18px) auto 0;
+    gap:18px;
+    justify-content:space-between;
+}
+
+.internship-hero > .page-bottom-btn-group a{
+    min-height:44px;
+    padding:11px 24px;
+}
+
+@media (max-height:760px) and (min-width:769px){
+    body .internship-hero{padding-top:78px;padding-bottom:12px;}
+    body .internship-container .page-title{font-size:clamp(2rem, 5svh, 3rem);margin-bottom:10px;}
+    body .internship-container .intern-card{gap:9px;}
+    body .internship-container .text-box{padding:10px 14px;}
+    body .internship-container .image-col{height:clamp(180px, 30svh, 250px);aspect-ratio:auto;}
+    body .internship-container .text-box h2{font-size:.88rem;margin-bottom:5px;}
+    body .internship-container .text-box p,
+    body .internship-container .text-box ul li{font-size:.72rem;line-height:1.35;}
+    body .internship-container .text-box ul{margin-top:4px;}
+    .internship-hero > .page-bottom-btn-group{margin-top:8px;}
+}
+
+@media (max-width:768px){
+    html:has(.internship-hero),
+    body:has(.internship-hero){
+        height:auto;
+        min-height:100svh;
+        overflow-x:hidden;
+        overflow-y:auto;
+    }
+
+    body .internship-hero{
+        height:auto;
+        min-height:100svh;
+        overflow:visible;
+        padding:86px 20px 36px;
+    }
+
+    body .internship-container{
+        width:min(100%, 720px);
+        max-width:720px;
+        flex:none;
+        gap:0;
+    }
+
+    body .internship-container .page-title{
+        font-size:clamp(2rem, 6vw, 2.5rem);
+        margin:0 auto 16px;
+    }
+
+    body .internship-container .two-col-wrapper{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    body .internship-container .intern-card{gap:12px;}
+    body .internship-container .text-box{padding:18px;border-radius:16px;}
+    body .internship-container .text-box h2{font-size:1rem;line-height:1.35;margin-bottom:7px;}
+    body .internship-container .text-box p,
+    body .internship-container .text-box ul li{font-size:.84rem;line-height:1.45;}
+    body .internship-container .text-box ul{margin-top:6px;padding-left:20px;}
+    body .internship-container .text-box ul li{margin-bottom:4px;}
+
+    body .internship-container .image-col{
+        height:clamp(200px, 52vw, 320px);
+        aspect-ratio:auto;
+    }
+
+    body .internship-container .image-box{
+        height:100%;
+        aspect-ratio:auto;
+        padding:5px;
+        border-radius:16px;
+    }
+
+    body .internship-container .slider-track img{border-radius:11px;}
+    .slider-btn{width:36px;height:36px;}
+
+    body .internship-hero > .page-bottom-btn-group{
+        width:min(100%, 720px);
+        margin:24px auto 0;
+        flex-direction:column;
+        flex-wrap:nowrap;
+        gap:12px;
+    }
+
+    body .internship-hero > .page-bottom-btn-group a{
+        width:100%;
+        min-height:46px;
+        padding:11px 20px;
+        font-size:.85rem;
+        text-align:center;
+    }
+}
+/* Balanced bottom navigation buttons across viewport sizes. */
+body .internship-hero > .page-bottom-btn-group{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(170px, 220px));
+    justify-content:space-between;
+    align-items:stretch;
+    width:min(100%, 1200px);
+    gap:clamp(12px, 2vw, 24px);
+    margin:clamp(10px, 1.6svh, 18px) auto 0;
+}
+
+body .internship-hero > .page-bottom-btn-group a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    min-width:0;
+    min-height:clamp(42px, 4.4svh, 50px);
+    padding:10px clamp(12px, 1.5vw, 20px);
+    border-radius:999px;
+    font-size:clamp(.76rem, .9vw, .9rem);
+    line-height:1.2;
+    text-align:center;
+    white-space:nowrap;
+}
+
+@media (max-width:768px){
+    body .internship-hero > .page-bottom-btn-group{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+        width:min(100%, 720px);
+        margin:24px auto 0;
+        gap:12px;
+    }
+
+    body .internship-hero > .page-bottom-btn-group a{
+        min-height:44px;
+        padding:9px 10px;
+        font-size:clamp(.68rem, 2.8vw, .8rem);
+    }
+}
+
+@media (max-width:360px){
+    body .internship-hero > .page-bottom-btn-group{gap:8px;}
+    body .internship-hero > .page-bottom-btn-group a{padding:8px 6px;font-size:.66rem;}
+}
+/* Circular glass navigation inspired by the Skills page reference. */
+body .internship-hero > .page-bottom-btn-group{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:min(100%, 1200px);
+    margin:clamp(10px, 1.6svh, 18px) auto 0;
+    gap:clamp(20px, 6vw, 88px);
+}
+
+body .internship-hero > .page-bottom-btn-group a{
+    display:inline-flex;
+    flex:0 0 auto;
+    align-items:center;
+    justify-content:center;
+    width:clamp(148px, 14vw, 184px);
+    height:clamp(148px, 14vw, 184px);
+    min-width:0;
+    min-height:0;
+    aspect-ratio:1;
+    padding:22px;
+    border:1px solid rgba(255,255,255,.76);
+    border-radius:50%;
+    background:rgba(255,255,255,.55);
+    box-shadow:0 16px 42px rgba(92,48,64,.12), inset 0 1px 0 rgba(255,255,255,.8);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    color:#4b2c36;
+    font-size:clamp(.8rem, 1vw, .96rem);
+    font-weight:700;
+    line-height:1.35;
+    text-align:center;
+    white-space:normal;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+body .internship-hero > .page-bottom-btn-group a:hover{
+    transform:translateY(-4px) scale(1.025);
+    background:rgba(255,255,255,.72);
+    box-shadow:0 20px 48px rgba(92,48,64,.17), inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+@media (max-height:900px) and (min-width:769px){
+    body .internship-container .image-col{height:clamp(190px, 27svh, 240px);aspect-ratio:auto;}
+    body .internship-hero > .page-bottom-btn-group a{width:clamp(124px, 14vh, 152px);height:clamp(124px, 14vh, 152px);}
+}
+
+@media (max-width:768px){
+    body .internship-hero > .page-bottom-btn-group{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        width:min(100%, 720px);
+        margin:28px auto 0;
+        gap:20px;
+    }
+
+    body .internship-hero > .page-bottom-btn-group a{
+        width:210px;
+        height:210px;
+        min-height:0;
+        padding:24px;
+        font-size:clamp(.95rem, 4vw, 1.1rem);
+    }
+}
+
+@media (max-width:360px){
+    body .internship-hero > .page-bottom-btn-group a{
+        width:208px;
+        height:208px;
+        font-size:.92rem;
+    }
+}
+/* Keep the regular desktop controls as the original paired pills. */
+body .internship-hero > .page-bottom-btn-group{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(170px, 220px));
+    justify-content:space-between;
+    align-items:center;
+    width:min(100%, 1200px);
+    margin:clamp(10px, 1.6svh, 18px) auto 0;
+    gap:clamp(12px, 2vw, 24px);
+}
+
+body .internship-hero > .page-bottom-btn-group a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height:auto;
+    min-width:0;
+    min-height:clamp(44px, 4.4svh, 50px);
+    aspect-ratio:auto;
+    padding:10px clamp(12px, 1.5vw, 20px);
+    border:1px solid rgba(255,255,255,.65);
+    border-radius:999px;
+    background:rgba(255,255,255,.55);
+    box-shadow:0 8px 22px rgba(92,48,64,.08);
+    color:#462834;
+    font-size:clamp(.76rem, .9vw, .9rem);
+    font-weight:600;
+    line-height:1.2;
+    text-align:center;
+    white-space:nowrap;
+}
+
+body .internship-hero > .page-bottom-btn-group a:hover{
+    transform:translateY(-2px);
+    background:rgba(255,255,255,.72);
+    box-shadow:0 12px 26px rgba(92,48,64,.14);
+}
+
+/* Small screens switch to the large round controls from the reference. */
+@media (max-width:768px){
+    body .internship-hero > .page-bottom-btn-group{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        width:min(100%, 720px);
+        margin:28px auto 0;
+        gap:20px;
+    }
+
+    body .internship-hero > .page-bottom-btn-group a{
+        width:210px;
+        height:210px;
+        min-height:0;
+        aspect-ratio:1;
+        padding:24px;
+        border:1px solid rgba(255,255,255,.76);
+        border-radius:50%;
+        background:rgba(255,255,255,.55);
+        box-shadow:0 16px 42px rgba(92,48,64,.12), inset 0 1px 0 rgba(255,255,255,.8);
+        backdrop-filter:blur(16px);
+        -webkit-backdrop-filter:blur(16px);
+        font-size:clamp(.95rem, 4vw, 1.1rem);
+        font-weight:700;
+        line-height:1.35;
+        white-space:normal;
+    }
+}
+
+@media (max-width:360px){
+    body .internship-hero > .page-bottom-btn-group a{width:208px;height:208px;}
+}
+/* Align the two internship columns as matched text and image rows. */
+@media (min-width:769px){
+    body .internship-container .two-col-wrapper{
+        align-items:stretch;
+        grid-template-rows:minmax(0, 1fr);
+    }
+
+    body .internship-container .intern-card{
+        height:100%;
+        min-height:0;
+        gap:clamp(10px, 1.5vh, 16px);
+    }
+
+    body .internship-container .text-col{
+        flex:0 0 auto;
+        height:clamp(190px, 23svh, 280px);
+    }
+
+    body .internship-container .text-box{
+        width:100%;
+        height:100%;
+    }
+
+    body .internship-container .image-col{
+        flex:1 1 0;
+        width:100%;
+        height:auto;
+        min-height:0;
+        aspect-ratio:auto;
+    }
+
+    body .internship-container .image-box{
+        width:100%;
+        height:100%;
+        aspect-ratio:auto;
+    }
+}
+
+@media (max-width:768px){
+    body .internship-container .intern-card{height:auto;}
+    body .internship-container .text-col{height:auto;flex:none;}
+    body .internship-container .text-box{height:auto;}
+    body .internship-container .image-col{flex:none;}
+}
+
+/* Match the Projects page rhythm while keeping a strict viewport for each slide. */
+.slider-window{
+    position:absolute;
+    inset:6px;
+    overflow:hidden;
+    border-radius:13px;
+    isolation:isolate;
+}
+
+.slider-track{
+    width:200%;
+    height:100%;
+    display:flex;
+    gap:0;
+    transition:transform .35s ease;
+}
+
+.slider-track img{
+    flex:0 0 50%;
+    width:50%;
+    max-width:none;
+    object-fit:cover;
+}
+
+@media (min-width:769px){
+    body .internship-hero{
+        padding:clamp(90px, 9svh, 108px) clamp(20px, 4vw, 64px) clamp(34px, 4svh, 48px);
+    }
+
+    body .internship-container{
+        flex:0 1 auto;
+        width:min(100%, 1120px);
+        max-width:1120px;
+        margin:0 auto;
+    }
+
+    body .internship-container .two-col-wrapper{
+        flex:0 0 auto;
+        gap:clamp(14px, 2vw, 24px);
+    }
+
+    body .internship-container .text-col{
+        height:clamp(220px, 24svh, 270px);
+    }
+
+    body .internship-container .image-col{
+        flex:0 0 auto;
+        width:86%;
+        height:auto;
+        align-self:center;
+        aspect-ratio:5 / 4;
+    }
+
+    body .internship-hero > .page-bottom-btn-group{
+        margin-top:auto;
+    }
+}
+
+@media (max-height:760px) and (min-width:769px){
+    body .internship-container .text-col{height:clamp(180px, 23svh, 215px);}
+    body .internship-container .image-col{height:clamp(185px, 31svh, 235px);aspect-ratio:auto;}
+}
+
+/* Keep the photos filling their frames as the browser narrows. */
+@media (min-width:769px) and (max-width:1100px){
+    body .internship-container .page-title{margin-bottom:clamp(26px, 3.2svh, 36px);}
+    body .internship-container .image-col{width:90%;}
+    body .internship-container .slider-window{inset:4px;}
+}
+
+body .internship-container .image-box{padding:0;}
+
+@media (max-width:768px){
+    body .internship-container .page-title{margin-bottom:24px;}
+    body .internship-container .slider-window{inset:5px;}
+}
+
+@media (min-width:1101px){
+    body .internship-container .page-title{margin-bottom:clamp(28px, 3.8svh, 42px);}
+}
+
+body .internship-container .text-box h2{
+    min-height:2.7em;
+    margin-bottom:8px;
+}
+
+body .internship-container .internship-divider{
+    width:min(180px, 48%);
+    height:4px;
+    margin:0 0 clamp(10px, 1.35svh, 16px);
+    border-radius:999px;
+    background:linear-gradient(90deg, transparent, #c9748f 22%, #b04f6b 52%, #c9748f 78%, transparent);
+}
+
+/* Larger internship card text and padding, including phone layouts. */
+body .internship-container .text-box { padding:clamp(16px,1.7vw,24px); }
+body .internship-container .text-box h2 { font-size:clamp(1.04rem,1.25vw,1.2rem); line-height:1.5; margin-bottom:10px; }
+body .internship-container .text-box p,
+body .internship-container .text-box ul li { font-size:clamp(.88rem,1.08vw,1rem); line-height:1.6; margin-bottom:7px; }
+body .internship-container .text-box ul { margin-top:9px; }
+@media (max-height:760px) and (min-width:769px) {
+    body .internship-container .text-box { padding:12px 16px; }
+    body .internship-container .text-box h2 { font-size:1rem; line-height:1.4; }
+    body .internship-container .text-box p,
+    body .internship-container .text-box ul li { font-size:.82rem; line-height:1.48; }
+}
+@media (max-width:768px) {
+    body .internship-container .text-box { padding:20px; }
+    body .internship-container .text-box h2 { font-size:1.12rem; line-height:1.5; }
+    body .internship-container .text-box p,
+    body .internship-container .text-box ul li { font-size:.96rem; line-height:1.6; }
+}
+@media (max-width:600px) {
+    body .internship-container .text-box { padding:18px; }
+    body .internship-container .text-box h2 { font-size:1.08rem; }
+    body .internship-container .text-box p,
+    body .internship-container .text-box ul li { font-size:.92rem; }
+}
+
+@media (min-width:769px) {
+    body .internship-container .text-col { height:clamp(260px,29svh,310px); }
+    body .internship-container .image-col { height:clamp(250px,32svh,300px); aspect-ratio:auto; }
+}
+@media (max-height:760px) and (min-width:769px) {
+    body .internship-container .text-col { height:clamp(230px,31svh,270px); }
+    body .internship-container .image-col { height:clamp(200px,27svh,235px); }
+}
