@@ -1,0 +1,475 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    line-height:1.5;
+    color:#443333;
+    height:100svh;
+    overflow:hidden;
+    background:
+        linear-gradient(rgba(255,245,248,.30), rgba(255,245,248,.30)),
+        url("../images/home-bg.png") center center / cover fixed no-repeat;
+}
+
+/* Navbar */
+
+#navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #4b2c36;
+}
+
+.nav-links {
+    display: flex;
+    gap:14px;
+    list-style: none;
+}
+
+.glass-nav-item{
+    display: inline-block;
+    padding:7px 16px;
+    border-radius:999px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border:1px solid rgba(255,255,255,0.25);
+    color:#4b2c36;
+    text-decoration: none;
+    font-weight:500;
+    transition: all 0.25s ease;
+}
+
+.glass-nav-item:hover{
+    transform: scale(1.12);
+    background:rgba(255,255,255,0.3);
+    color:#b85c78;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #4b2c36;
+}
+
+
+/* 与 Home 保持一致 */
+
+.nav-char-icon{
+    height:28px;
+    width:auto;
+    margin-left:6px;
+    vertical-align:middle;
+    pointer-events:none;
+}
+
+.nav-hint{
+    color:#4b2c36;
+    font-size:.75rem;
+    opacity:.7;
+    white-space:nowrap;
+    margin-left:20px;
+}
+
+/* Page */
+
+body .projects-hero{
+    height:100svh;
+    min-height:0;
+    overflow:hidden;
+    background:transparent;
+    position:relative;
+    padding:clamp(76px, 8.5svh, 96px) 5vw 14px;
+}
+
+body .projects-container{
+    position:relative;
+    z-index:2;
+    max-width:1200px;
+    width:100%;
+    margin:auto;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:clamp(10px, 1.6svh, 18px);
+}
+
+body .projects-container .page-title{
+    text-align:center;
+    font-size:clamp(2.5rem, 5.5svh, 4rem);
+    color:#332228;
+    margin:0;
+    flex:0 0 auto;
+    line-height:1.12;
+}
+
+/* Banner */
+
+body .projects-container .hero-carousel{
+    width:100%;
+    height:clamp(220px, 32svh, 360px);
+
+    overflow:hidden;
+    border-radius:22px;
+
+    background:rgba(255,255,255,.30);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.45);
+
+    margin-bottom:0;
+    flex:0 0 auto;
+
+    position:relative;
+    scroll-behavior:auto;
+}
+
+.auto-carousel-wrap{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    border-radius:18px;
+}
+
+.auto-carousel-track{
+    display:flex;
+    gap:16px;
+    height:100%;
+    width:max-content;
+    animation:autoScroll 22s linear infinite;
+}
+
+.auto-carousel-wrap:hover .auto-carousel-track{
+    animation-play-state:paused;
+}
+
+.auto-carousel-track img{
+    height:100%;
+    width:auto;
+    border-radius:12px;
+    object-fit:cover;
+    flex-shrink:0;
+}
+
+.hero-track{
+    display:flex;
+    gap:0;
+    width:max-content;
+    height:100%;
+    animation:autoScroll 22s linear infinite;
+}
+
+.hero-track-group{
+    display:flex;
+    flex:0 0 auto;
+    gap:16px;
+    height:100%;
+    padding:8px;
+}
+
+.hero-carousel:hover .hero-track{
+    animation-play-state:paused;
+}
+
+.hero-track img{
+    height:100%;
+    width:clamp(220px, 25vw, 320px);
+    object-fit:cover;
+    object-position:center;
+    border-radius:14px;
+    flex-shrink:0;
+}
+
+@keyframes autoScroll{
+    0%{
+        transform:translateX(0);
+    }
+    100%{
+        transform:translateX(-33.333%);
+    }
+}
+/* Cards */
+
+body .projects-container .two-col-wrapper{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:clamp(12px, 2vw, 30px);
+}
+
+.glass-card{
+
+    background:rgba(255,255,255,.65);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.75);
+
+    border-radius:18px;
+
+    padding:clamp(12px, 2svh, 22px);
+
+    box-shadow:0 8px 22px rgba(184,92,119,.10);
+
+    transition:.28s;
+}
+
+.glass-card:hover{
+
+    transform:translateY(-5px);
+}
+
+.glass-card h2{
+    font-size:clamp(.95rem, 1.8svh, 1.15rem);
+    line-height:1.35;
+
+    color:#462834;
+
+    margin-bottom:10px;
+}
+
+.divider-line{
+
+    width:180px;
+
+    height:4px;
+
+    margin-bottom:16px;
+
+    background:linear-gradient(90deg,transparent,#c9748f,#b04f6b,#c9748f,transparent);
+}
+
+.glass-card ul{
+
+    padding-left:22px;
+}
+
+.glass-card li{
+    margin-bottom:clamp(3px, .75svh, 10px);
+    line-height:1.6;
+    font-size:clamp(.78rem, 1.5svh, 1rem);
+}
+
+/* Buttons */
+
+.page-bottom-btn-group{
+    display:flex;
+    justify-content:space-between;
+    margin-top:0;
+    flex:0 0 auto;
+}
+
+.btn-primary,.btn-secondary{
+    padding:clamp(9px, 1.3svh, 14px) clamp(16px, 2.8vw, 32px);
+
+    border-radius:999px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.25s;
+}
+
+.btn-primary{
+
+    background:rgba(255,255,255,.55);
+
+    border:1px solid rgba(255,255,255,.60);
+
+    color:#462834;
+}
+
+.btn-secondary{
+
+    background:rgba(255,255,255,.40);
+
+    border:1px solid rgba(255,255,255,.45);
+
+    color:#462834;
+}
+
+.btn-primary:hover,.btn-secondary:hover{
+
+    transform:translateY(-2px);
+}
+
+footer{
+    position:fixed;
+    z-index:5;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:28px;
+    padding:3px 0;
+    text-align:center;
+    font-size:.8rem;
+    line-height:22px;
+    color:#553b44;
+    background:rgba(255,245,248,.32);
+    backdrop-filter:blur(12px);
+}
+
+/* Animation */
+
+.animate-item{
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+    animation:fadeUp .7s forwards;
+}
+
+.item-2{
+
+    animation-delay:.15s;
+}
+
+.item-3{
+
+    animation-delay:.3s;
+}
+
+@keyframes fadeUp{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    body{
+        height:auto;
+        min-height:100svh;
+        overflow-x:hidden;
+        overflow-y:auto;
+    }
+
+    body .projects-hero{
+        height:auto;
+        min-height:100svh;
+        overflow:visible;
+        padding:86px 20px 36px;
+    }
+
+    body .projects-container{
+        height:auto;
+        gap:14px;
+    }
+
+    body .projects-container .two-col-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .menu-btn{
+
+        display:block;
+    }
+
+    .nav-links{
+
+        position:absolute;
+
+        top:100%;
+
+        left:0;
+
+        right:0;
+
+        display:none;
+
+        flex-direction:column;
+
+        background:rgba(255,255,255,.10);
+
+        backdrop-filter:blur(18px);
+
+        padding:15px;
+    }
+
+    .nav-links.active{
+
+        display:flex;
+    }
+
+    body .projects-container .page-title{
+
+        font-size:2.5rem;
+    }
+
+    body .projects-container .hero-carousel{
+
+        height:220px;
+    }
+
+    .hero-track img{
+        width:min(74vw, 280px);
+    }
+
+    .two-col-wrapper{
+
+        grid-template-columns:1fr;
+    }
+
+    .page-bottom-btn-group{
+
+        flex-direction:column;
+
+        gap:15px;
+    }
+
+    footer{
+        position:static;
+        height:auto;
+        padding:8px;
+        line-height:1.4;
+    }
+}
+
+/* Larger project card copy with room for the extra line height. */
+body .projects-container { gap:clamp(12px,1.8svh,22px); }
+body .projects-container .glass-card { padding:clamp(16px,2.4svh,28px); }
+body .projects-container .glass-card h2 { font-size:clamp(1.12rem,2svh,1.35rem); line-height:1.45; margin-bottom:14px; }
+body .projects-container .glass-card li { font-size:clamp(.92rem,1.7svh,1.12rem); line-height:1.7; margin-bottom:clamp(5px,.9svh,12px); }
+body .projects-container .two-col-wrapper { gap:clamp(16px,2.2vw,34px); }
+@media(max-width:768px) {
+    body .projects-container .glass-card { padding:22px; }
+    body .projects-container .glass-card h2 { font-size:1.2rem; }
+    body .projects-container .glass-card li { font-size:1rem; line-height:1.7; }
+}
+@media(max-width:600px) { body .projects-container .glass-card { padding:20px; } }
