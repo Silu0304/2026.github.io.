@@ -1,0 +1,1791 @@
+/* =========================================================
+   SHARED LAYOUT POLISH ACROSS THE PORTFOLIO PAGES
+   ========================================================= */
+
+:root {
+
+    --ink: #4b2c36;
+
+    --ink-soft: #704e5b;
+
+    --rose: #b85c78;
+
+    --glass: rgba(255, 255, 255, .68);
+
+    --glass-border: rgba(255, 255, 255, .72);
+
+    --shadow: 0 18px 48px rgba(92, 48, 64, .12);
+
+}
+
+*, *::before, *::after {
+
+    box-sizing: border-box;
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+body {
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    color: var(--ink);
+
+}
+
+img {
+
+    max-width: 100%;
+
+}
+
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+#navbar {
+
+    background: rgba(255, 250, 252, .76);
+
+    border-bottom: 1px solid rgba(255, 255, 255, .8);
+
+    box-shadow: 0 6px 24px rgba(92, 48, 64, .06);
+
+}
+
+.nav-container {
+
+    width: min(100% - 40px, 1200px);
+
+    min-height: 76px;
+
+    padding: 10px 0;
+
+    gap: 20px;
+
+}
+
+.nav-links {
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+.glass-nav-item {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    min-height: 44px;
+
+    padding: 6px 15px;
+
+    white-space: nowrap;
+
+    font-size: .92rem;
+
+    transition:
+
+        transform .2s ease,
+
+        background .2s ease,
+
+        box-shadow .2s ease;
+
+}
+
+.glass-nav-item:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(184, 92, 119, .13);
+
+}
+
+.nav-char-icon {
+
+    width: 30px;
+
+    height: 30px;
+
+    object-fit: contain;
+
+    margin: 0;
+
+    vertical-align: middle;
+
+}
+
+.menu-btn {
+
+    min-width: 44px;
+
+    min-height: 44px;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+
+/* =========================================================
+   GENERAL BUTTONS
+   ========================================================= */
+
+.btn-primary,
+.btn-secondary,
+.btn-explore {
+
+    min-height: 48px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 12px 24px;
+
+    border-radius: 999px;
+
+    box-shadow: 0 8px 22px rgba(92, 48, 64, .08);
+
+    transition:
+
+        transform .2s ease,
+
+        box-shadow .2s ease,
+
+        background .2s ease;
+
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-explore:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 12px 26px rgba(92, 48, 64, .14);
+
+}
+
+
+
+/* =========================================================
+   PAGE BOTTOM BUTTONS
+   ========================================================= */
+
+.page-bottom-btn-group {
+
+    width: min(100%, 1100px);
+
+    gap: 18px !important;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin: 30px auto 0;
+
+}
+
+
+
+/* =========================================================
+   PAGE TITLES
+   ========================================================= */
+
+.page-title {
+
+    line-height: 1.12;
+
+    text-wrap: balance;
+
+}
+
+.title-gradient-accent {
+
+    color: #c66b89;
+
+    background:
+
+        linear-gradient(
+
+            100deg,
+
+            #6b384c 0%,
+
+            #bd627f 48%,
+
+            #ed91b3 100%
+
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+}
+
+
+
+/* =========================================================
+   HOME
+   ========================================================= */
+
+body:has(.hero) {
+
+    height: auto;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    overflow-y: auto;
+
+}
+
+.hero {
+
+    min-height: 720px;
+
+    height: 100svh;
+
+}
+
+.character-float-wrap {
+
+    max-width: 58vw;
+
+    max-height: 74vh;
+
+}
+
+footer {
+
+    pointer-events: none;
+
+}
+
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about-hero {
+
+    min-height: 100svh;
+
+    height: auto;
+
+    padding: 120px 6vw 54px;
+
+}
+
+.about-container {
+
+    width: min(100%, 1120px);
+
+    gap: clamp(28px, 5vw, 72px);
+
+    margin: 0 auto 28px;
+
+}
+
+.profile-img-wrap img {
+
+    width: clamp(210px, 25vw, 320px);
+
+    height: clamp(210px, 25vw, 320px);
+
+    object-fit: cover;
+
+}
+
+.about-container .glass-card {
+
+    max-width: 720px;
+
+    background: var(--glass);
+
+    border-color: var(--glass-border);
+
+    box-shadow: var(--shadow);
+
+}
+
+.decor {
+
+    pointer-events: none;
+
+}
+
+
+
+/* =========================================================
+   INTERNSHIP AND PROJECT PAGES
+   ========================================================= */
+
+.internship-hero,
+.projects-hero {
+
+    min-height: 100svh;
+
+    height: auto;
+
+}
+
+.internship-container {
+
+    max-width: 1120px;
+
+    margin-top: 18px;
+
+}
+
+.internship-container .page-title,
+.projects-container .page-title {
+
+    font-size: clamp(2.35rem, 5vw, 3.6rem);
+
+    color: #563340;
+
+    margin: 12px auto 30px;
+
+}
+
+.internship-container .two-col-wrapper,
+.projects-container .two-col-wrapper {
+
+    gap: 24px;
+
+}
+
+.internship-container .text-box,
+.projects-container .glass-card {
+
+    background: var(--glass);
+
+    border-color: var(--glass-border);
+
+    box-shadow: var(--shadow);
+
+}
+
+.internship-container .text-box {
+
+    min-height: 220px;
+
+    padding: 22px;
+
+}
+
+.internship-container .image-box {
+
+    aspect-ratio: 4 / 3;
+
+}
+
+.internship-container .slider-track img {
+
+    object-fit: contain;
+
+    background: rgba(255, 255, 255, .4);
+
+}
+
+.slider-btn {
+
+    width: 42px;
+
+    height: 42px;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .13);
+
+}
+
+.projects-container {
+
+    max-width: 1120px;
+
+}
+
+.projects-container .hero-carousel {
+
+    height: clamp(210px, 30vw, 340px);
+
+    box-shadow: var(--shadow);
+
+}
+
+.projects-container .glass-card {
+
+    height: 100%;
+
+}
+
+
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+.skills-stage {
+
+    min-height: 100svh;
+
+}
+
+.skills-content {
+
+    width: min(100%, 1180px);
+
+}
+
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .nav-container {
+
+        width: min(100% - 32px, 1200px);
+
+    }
+
+    .nav-links {
+
+        gap: 6px;
+
+    }
+
+    .glass-nav-item {
+
+        padding: 6px 10px;
+
+        font-size: .84rem;
+
+    }
+
+    .nav-char-icon {
+
+        width: 25px;
+
+        height: 25px;
+
+    }
+
+    .nav-hint {
+
+        display: none;
+
+    }
+
+    .character-float-wrap {
+
+        right: 2vw;
+
+        max-width: 66vw;
+
+        transform: scale(.85);
+
+        transform-origin: right bottom;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+
+        height: auto;
+
+        overflow-x: hidden;
+
+        overflow-y: auto;
+
+    }
+
+
+
+    /* -----------------------------------------------------
+       MOBILE NAV CONTAINER
+       ----------------------------------------------------- */
+
+    .nav-container {
+
+        width: 100%;
+
+        min-height: 64px;
+
+        padding: 8px 18px;
+
+    }
+
+    .menu-btn {
+
+        display: flex;
+
+    }
+
+
+
+    /* -----------------------------------------------------
+       MOBILE NAV MENU
+       ----------------------------------------------------- */
+
+    .nav-links {
+
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+
+        right: 0;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 8px;
+
+        padding: 14px 18px 18px;
+
+        background: rgba(255, 250, 252, .96);
+
+        border-bottom:
+
+            1px solid rgba(255, 255, 255, .85);
+
+        box-shadow:
+
+            0 14px 24px rgba(92, 48, 64, .1);
+
+        z-index: 1000;
+
+    }
+
+    .nav-links.active {
+
+        display: flex;
+
+    }
+
+
+
+    /* -----------------------------------------------------
+       MOBILE NAV LI
+       Day/Night 不受影响
+       Home / About / Internship / Projects / Skills
+       统一尺寸
+       ----------------------------------------------------- */
+
+    .nav-links > li:not(.theme-switch-item) {
+
+        width: 100%;
+
+        height: 46px;
+
+        min-height: 46px;
+
+        flex: 0 0 46px;
+
+    }
+
+
+
+    /* -----------------------------------------------------
+       MOBILE NAV BUTTON
+       ----------------------------------------------------- */
+
+    .nav-links > li:not(.theme-switch-item) .glass-nav-item {
+
+        width: 100%;
+
+        height: 46px;
+
+        min-height: 46px;
+
+        max-height: 46px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        padding: 0 16px;
+
+        gap: 7px;
+
+        white-space: nowrap;
+
+        overflow: visible;
+
+        font-size: .95rem;
+
+    }
+
+
+
+    /* -----------------------------------------------------
+       MOBILE NAV CHARACTER ICON
+       ----------------------------------------------------- */
+
+    .nav-links > li:not(.theme-switch-item) .nav-char-icon {
+
+        width: 26px;
+
+        height: 26px;
+
+        flex: 0 0 26px;
+
+        object-fit: contain;
+
+    }
+
+
+
+    /* -----------------------------------------------------
+       HOME
+       ----------------------------------------------------- */
+
+    .hero {
+
+        min-height: 680px;
+
+        height: 100svh;
+
+        padding: 0 7vw;
+
+        align-items: flex-start;
+
+        justify-content: center;
+
+        flex-direction: column;
+
+    }
+
+    .hero-content {
+
+        margin-top: -130px;
+
+    }
+
+    .character-float-wrap {
+
+        width: 70vw;
+
+        height: 56vw;
+
+        right: 0;
+
+        bottom: 6vh;
+
+        transform: scale(.78);
+
+    }
+
+    .title-main {
+
+        font-size: clamp(2rem, 8vw, 3rem);
+
+    }
+
+    .intro-text {
+
+        font-size: clamp(1.25rem, 5vw, 1.8rem);
+
+    }
+
+
+
+    /* -----------------------------------------------------
+       ABOUT
+       ----------------------------------------------------- */
+
+    .about-hero {
+
+        padding: 96px 20px 42px;
+
+    }
+
+    .about-container {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 22px;
+
+    }
+
+    .about-container .glass-card {
+
+        padding: 26px;
+
+    }
+
+    .card-divider {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+    .decor {
+
+        width: 74px;
+
+    }
+
+    .decor-left {
+
+        left: 0;
+
+        bottom: -40px;
+
+    }
+
+    .decor-right {
+
+        right: 0;
+
+        bottom: -40px;
+
+    }
+
+
+
+    /* -----------------------------------------------------
+       GENERAL BOTTOM BUTTONS
+       ----------------------------------------------------- */
+
+    .page-bottom-btn-group {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+    }
+
+
+
+    /* -----------------------------------------------------
+       INTERNSHIP / PROJECTS
+       ----------------------------------------------------- */
+
+    .internship-hero,
+    .projects-hero {
+
+        padding: 88px 20px 36px;
+
+    }
+
+    .internship-container {
+
+        margin-top: 0;
+
+    }
+
+    .internship-container .two-col-wrapper,
+    .projects-container .two-col-wrapper {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .internship-container .text-box {
+
+        min-height: 0;
+
+    }
+
+    .internship-container .image-box {
+
+        aspect-ratio: 16 / 10;
+
+    }
+
+    .projects-container .hero-carousel {
+
+        height: 220px;
+
+    }
+
+    .internship-hero .page-bottom-btn-group,
+    .projects-hero .page-bottom-btn-group {
+
+        justify-content: space-between;
+
+    }
+
+
+
+    /* -----------------------------------------------------
+       SKILLS
+       ----------------------------------------------------- */
+
+    .skills-stage {
+
+        padding: 100px 20px 60px;
+
+    }
+
+
+
+    /* -----------------------------------------------------
+       BOTTOM BUTTON WIDTH
+       ----------------------------------------------------- */
+
+    .page-bottom-btn-group a {
+
+        flex: 1 1 210px;
+
+        text-align: center;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .character-float-wrap {
+
+        width: 92vw;
+
+        height: 72vw;
+
+        right: -12vw;
+
+        bottom: 5vh;
+
+        transform: scale(.72);
+
+    }
+
+    .hero-content {
+
+        margin-top: -180px;
+
+    }
+
+    .about-container .glass-card {
+
+        padding: 22px 18px;
+
+    }
+
+    .internship-container .page-title,
+    .projects-container .page-title {
+
+        font-size: 2.15rem;
+
+    }
+
+    .internship-hero .page-bottom-btn-group,
+    .projects-hero .page-bottom-btn-group {
+
+        flex-direction: column;
+
+    }
+
+    .internship-hero .page-bottom-btn-group a,
+    .projects-hero .page-bottom-btn-group a {
+
+        width: 100%;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        scroll-behavior: auto !important;
+
+        animation-duration: .01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: .01ms !important;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   RESPONSIVE STICKER LAYER
+   ========================================================= */
+
+body:has(.hero .character-float-wrap) {
+
+    overflow-x: hidden;
+
+}
+
+.hero {
+
+    width: 100%;
+
+    min-width: 0;
+
+    height: 100svh;
+
+    min-height: 100svh;
+
+    background-position: center center;
+
+    background-size: cover;
+
+    overflow: hidden;
+
+}
+
+.hero .character-float-wrap {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    right: auto;
+
+    bottom: auto;
+
+    width: max(100%, calc(100svh * 1.78));
+
+    height: max(100%, calc(100vw / 1.78));
+
+    max-width: none;
+
+    max-height: none;
+
+    transform: translate(-50%, -50%);
+
+}
+
+.hero .character-float-wrap .char-float {
+
+    width: auto;
+
+    height: auto;
+
+    transform: translate(-50%, -50%);
+
+}
+
+.hero .character-float-wrap .char-float img {
+
+    display: block;
+
+    width: auto;
+
+    height: clamp(120px, 15vh, 172px);
+
+    max-width: none;
+
+    object-fit: contain;
+
+}
+
+.hero .character-float-wrap .char-float[data-name="projects"] {
+
+    left: 66%;
+
+    top: 48%;
+
+}
+
+.hero .character-float-wrap .char-float[data-name="about"] {
+
+    left: 79%;
+
+    top: 51%;
+
+}
+
+.hero .character-float-wrap .char-float[data-name="internship"] {
+
+    left: 58%;
+
+    top: 69%;
+
+}
+
+.hero .character-float-wrap .char-float[data-name="skills"] {
+
+    left: 85%;
+
+    top: 69%;
+
+}
+
+.hero .character-float-wrap .char-float[data-name="home"] {
+
+    left: 72%;
+
+    top: 87%;
+
+}
+
+.hero .character-float-wrap .char-float:hover {
+
+    transform: translate(-50%, -56%) scale(1.04);
+
+}
+
+
+
+/* =====================================================
+   DAY / NIGHT BUTTON
+   ===================================================== */
+
+.theme-switch-item {
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+.day-night-toggle {
+
+    width: 44px;
+
+    height: 44px;
+
+    padding: 0;
+
+    margin: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 999px;
+
+    border: 1px solid rgba(255, 255, 255, .25);
+
+    background: rgba(255, 255, 255, .15);
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+    color: #4b2c36;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+
+        transform .25s ease,
+
+        background .25s ease,
+
+        box-shadow .25s ease;
+
+}
+
+.day-night-toggle:hover {
+
+    transform: scale(1.08);
+
+    background: rgba(255, 255, 255, .30);
+
+    box-shadow:
+
+        0 8px 20px rgba(184, 92, 119, .14);
+
+}
+
+
+
+/* =====================================================
+   SUN / MOON ANIMATION
+   ===================================================== */
+
+.sun-icon,
+.moon-icon {
+
+    position: absolute;
+
+    transition:
+
+        opacity .35s ease,
+
+        transform .35s ease;
+
+}
+
+.sun-icon {
+
+    opacity: 1;
+
+    transform: scale(1) rotate(0deg);
+
+}
+
+.moon-icon {
+
+    opacity: 0;
+
+    transform: scale(.5) rotate(-90deg);
+
+}
+
+
+
+/* =====================================================
+   NIGHT MODE
+   ===================================================== */
+
+body.night-mode .sun-icon {
+
+    opacity: 0;
+
+    transform: scale(.5) rotate(90deg);
+
+}
+
+body.night-mode .moon-icon {
+
+    opacity: 1;
+
+    transform: scale(1) rotate(0deg);
+
+}
+
+
+
+/* =====================================================
+   NIGHT WORLD
+   ===================================================== */
+
+.night-world {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    background:
+
+        radial-gradient(
+
+            circle at 78% 18%,
+
+            rgba(255, 190, 225, .25),
+
+            transparent 25%
+
+        ),
+
+        radial-gradient(
+
+            circle at 20% 78%,
+
+            rgba(180, 140, 255, .18),
+
+            transparent 30%
+
+        ),
+
+        linear-gradient(
+
+            145deg,
+
+            #21152e 0%,
+
+            #321b3e 42%,
+
+            #4a2449 72%,
+
+            #24152f 100%
+
+        );
+
+    transition: opacity 1s ease;
+
+}
+
+body.night-mode .night-world {
+
+    opacity: 1;
+
+}
+
+
+
+/* =====================================================
+   NIGHT STARS
+   ===================================================== */
+
+.night-stars {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 4;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transition: opacity 1s ease;
+
+}
+
+body.night-mode .night-stars {
+
+    opacity: 1;
+
+}
+
+.night-star {
+
+    position: absolute;
+
+    width: 3px;
+
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #fff7fc;
+
+    box-shadow:
+
+        0 0 5px rgba(255, 220, 240, .9),
+
+        0 0 12px rgba(255, 170, 215, .55);
+
+    animation:
+
+        nightTwinkle 2.8s ease-in-out infinite;
+
+}
+
+@keyframes nightTwinkle {
+
+    0%,
+    100% {
+
+        opacity: .25;
+
+        transform: scale(.7);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform: scale(1.35);
+
+    }
+
+}
+
+
+
+/* =====================================================
+   NIGHT MOON
+   ===================================================== */
+
+.night-moon {
+
+    position: fixed;
+
+    top: 105px;
+
+    right: 9vw;
+
+    width: 105px;
+
+    height: 105px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 4;
+
+    opacity: 0;
+
+    transform: scale(.7);
+
+    background:
+
+        radial-gradient(
+
+            circle at 35% 35%,
+
+            #fffafd 0%,
+
+            #ffe8f5 45%,
+
+            #f7b9dc 100%
+
+        );
+
+    box-shadow:
+
+        0 0 25px rgba(255, 215, 240, .55),
+
+        0 0 70px rgba(255, 175, 220, .28),
+
+        0 0 120px rgba(210, 150, 255, .18);
+
+    transition:
+
+        opacity 1s ease,
+
+        transform 1s cubic-bezier(.2, .8, .2, 1);
+
+}
+
+body.night-mode .night-moon {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+}
+
+
+
+/* =========================================================
+   FINAL MOBILE NAV OVERRIDE
+
+   只统一移动端：
+
+   Home / About / Internship / Projects / Skills
+
+   不改变 PC。
+
+   不改变 Day / Night 按钮。
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* 导航菜单本身 */
+
+    .nav-links {
+
+        width: 100%;
+
+    }
+
+    /* 五个普通导航按钮的父级 */
+
+    .nav-links > li:not(.theme-switch-item) {
+
+        width: 100%;
+
+        height: 46px;
+
+        min-height: 46px;
+
+        max-height: 46px;
+
+        flex: 0 0 46px;
+
+    }
+
+    /* 五个普通导航按钮 */
+
+    .nav-links > li:not(.theme-switch-item) > .glass-nav-item {
+
+        width: 100%;
+
+        height: 46px;
+
+        min-height: 46px;
+
+        max-height: 46px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        padding: 0 16px;
+
+        gap: 7px;
+
+        white-space: nowrap;
+
+        overflow: visible;
+
+        font-size: .95rem;
+
+    }
+
+    /* 五个普通导航按钮的小人物 */
+
+    .nav-links > li:not(.theme-switch-item) > .glass-nav-item > .nav-char-icon {
+
+        width: 26px;
+
+        height: 26px;
+
+        min-width: 26px;
+
+        min-height: 26px;
+
+        flex: 0 0 26px;
+
+        object-fit: contain;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   MOBILE PAGE BOTTOM BUTTONS
+   MATCH ABOUT PAGE
+
+   只修改：
+   Internship / Projects / Skills
+   页面最下面的两个按钮
+
+   不修改：
+   PC
+   顶部导航
+   Day / Night
+   页面内容
+   图片
+   标题
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* -----------------------------------------------------
+       BUTTON GROUP
+       ----------------------------------------------------- */
+
+    .internship-hero .page-bottom-btn-group,
+    .projects-hero .page-bottom-btn-group,
+    .skills-stage .page-bottom-btn-group {
+
+        width: 100% !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        gap: 22px !important;
+
+        margin: 30px auto 0 !important;
+
+        padding: 0 !important;
+
+    }
+
+
+    /* -----------------------------------------------------
+       BUTTONS
+       ----------------------------------------------------- */
+
+    .internship-hero .page-bottom-btn-group a,
+    .projects-hero .page-bottom-btn-group a,
+    .skills-stage .page-bottom-btn-group a {
+
+        width: min(100%, 680px) !important;
+
+        min-width: 0 !important;
+
+        max-width: 680px !important;
+
+        height: 112px !important;
+
+        min-height: 112px !important;
+
+        max-height: 112px !important;
+
+        flex: 0 0 112px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        padding: 12px 24px !important;
+
+        margin: 0 !important;
+
+        border-radius: 999px !important;
+
+        text-align: center !important;
+
+        white-space: nowrap !important;
+
+        box-sizing: border-box !important;
+
+    }
+
+}
+/* =========================================================
+   FINAL FIX
+   MOBILE BOTTOM BUTTONS
+   Internship / Projects / Skills
+   Match About page exactly
+   PC IS NOT CHANGED
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* -----------------------------------------------------
+       Internship
+       ----------------------------------------------------- */
+
+    .internship-hero .page-bottom-btn-group {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 15px !important;
+    }
+
+    .internship-hero .page-bottom-btn-group a {
+        flex: 0 0 auto !important;
+
+        width: auto !important;
+        height: auto !important;
+
+        min-width: 200px !important;
+        min-height: 48px !important;
+
+        padding: 12px 28px !important;
+
+        border-radius: 999px !important;
+
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        text-align: center !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* -----------------------------------------------------
+       Projects
+       ----------------------------------------------------- */
+
+    .projects-hero .page-bottom-btn-group {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 15px !important;
+    }
+
+    .projects-hero .page-bottom-btn-group a {
+        flex: 0 0 auto !important;
+
+        width: auto !important;
+        height: auto !important;
+
+        min-width: 200px !important;
+        min-height: 48px !important;
+
+        padding: 12px 28px !important;
+
+        border-radius: 999px !important;
+
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        text-align: center !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* -----------------------------------------------------
+       Skills
+       ----------------------------------------------------- */
+
+    .skills-stage .page-bottom-btn-group {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 15px !important;
+    }
+
+    .skills-stage .page-bottom-btn-group a {
+        flex: 0 0 auto !important;
+
+        width: auto !important;
+        height: auto !important;
+
+        min-width: 200px !important;
+        min-height: 48px !important;
+
+        padding: 12px 28px !important;
+
+        border-radius: 999px !important;
+
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        text-align: center !important;
+
+        box-sizing: border-box !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   EXACTLY LIKE ABOUT
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    /* -----------------------------------------------------
+       Internship
+       ----------------------------------------------------- */
+
+    .internship-hero .page-bottom-btn-group {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    .internship-hero .page-bottom-btn-group a {
+        width: min(100%, 320px) !important;
+        min-width: 0 !important;
+        min-height: 48px !important;
+
+        height: auto !important;
+
+        padding: 12px 24px !important;
+
+        border-radius: 999px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       Projects
+       ----------------------------------------------------- */
+
+    .projects-hero .page-bottom-btn-group {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    .projects-hero .page-bottom-btn-group a {
+        width: min(100%, 320px) !important;
+        min-width: 0 !important;
+        min-height: 48px !important;
+
+        height: auto !important;
+
+        padding: 12px 24px !important;
+
+        border-radius: 999px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       Skills
+       ----------------------------------------------------- */
+
+    .skills-stage .page-bottom-btn-group {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    .skills-stage .page-bottom-btn-group a {
+        width: min(100%, 320px) !important;
+        min-width: 0 !important;
+        min-height: 48px !important;
+
+        height: auto !important;
+
+        padding: 12px 24px !important;
+
+        border-radius: 999px !important;
+    }
+}
